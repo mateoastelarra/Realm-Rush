@@ -13,6 +13,7 @@ public class CoordinateLabeller : MonoBehaviour
     void Awake() 
     {
         label = GetComponent<TextMeshPro>();
+        label.enabled = false;
         DisplayCurrentCoordinates();
         waypoint = GetComponentInParent<Waypoint>();
     }
@@ -26,6 +27,7 @@ public class CoordinateLabeller : MonoBehaviour
         }
 
         ColorCoordinates();
+        ToggleLabels();
     }
 
     void ColorCoordinates()
@@ -50,5 +52,13 @@ public class CoordinateLabeller : MonoBehaviour
     void UpdateObjectName()
     {
         transform.parent.name = coordinates.ToString();
+    }
+
+    void ToggleLabels()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            label.enabled = !label.enabled;
+        }
     }
 }
