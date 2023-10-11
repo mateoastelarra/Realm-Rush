@@ -1,25 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 [ExecuteAlways]
 public class CoordinateLabeller : MonoBehaviour
 {
+    [SerializeField] Color defaultColor = Color.white;
+    [SerializeField] Color blockedColor = Color.grey;
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
+    Waypoint waypoint;
 
     void Awake() 
     {
         label = GetComponent<TextMeshPro>();
-        DisplayCurrentCoordinates(); 
+        DisplayCurrentCoordinates();
+        waypoint = GetComponentInParent<Waypoint>();
     }
+
     void Update()
     {
         if (!Application.isPlaying)
         {
             DisplayCurrentCoordinates();
             UpdateObjectName();
+        }
+
+        ColorCoordinates();
+    }
+
+    void ColorCoordinates()
+    {
+        if (waypoint.IsPlaceable)
+        {
+            label.color = defaultColor;
+        }
+        else
+        {
+            label.color = blockedColor;
         }
     }
 
