@@ -6,7 +6,7 @@ public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform weapon;
     [SerializeField] float towerRange = 15f;
-    [SerializeField] ParticleSystem particleSystem;
+    [SerializeField] ParticleSystem projectileParticles;
     Transform target;
 
     void Update()
@@ -41,12 +41,22 @@ public class TargetLocator : MonoBehaviour
     void AimWeapon()
     {
         float targetDistance = Vector3.Distance(transform.position, target.position);
+        
+        weapon.transform.LookAt(target);
+
         if (targetDistance < towerRange)
-            weapon.transform.LookAt(target);
+        {
+            Attack(true);
+        }
+        else
+        {
+            Attack(false);
+        }
     } 
 
     void Attack(bool isActive)
     {
-
+        var emissionModule = projectileParticles.emission;
+        emissionModule.enabled = isActive;
     }
 }
