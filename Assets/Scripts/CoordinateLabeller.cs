@@ -6,6 +6,7 @@ public class CoordinateLabeller : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
     [SerializeField] Color blockedColor = Color.grey;
+
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
     Waypoint waypoint;
