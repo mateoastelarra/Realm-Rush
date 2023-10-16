@@ -5,6 +5,8 @@ using UnityEngine;
 public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform weapon;
+    [SerializeField] float towerRange = 15f;
+    [SerializeField] ParticleSystem particleSystem;
     Transform target;
 
     void Update()
@@ -38,6 +40,13 @@ public class TargetLocator : MonoBehaviour
 
     void AimWeapon()
     {
-        weapon.transform.LookAt(target);
+        float targetDistance = Vector3.Distance(transform.position, target.position);
+        if (targetDistance < towerRange)
+            weapon.transform.LookAt(target);
     } 
+
+    void Attack(bool isActive)
+    {
+
+    }
 }
