@@ -1,26 +1,32 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHP = 5;
-    private int currentHP = 0;
+    [SerializeField] int maxHP = 5;
+
+    [Tooltip("Ads amount to maxHP when enemy dies.")]
+    [SerializeField] int difficultyRamp = 1;
+
+    int currentHP = 0;
+
     Enemy enemy;
 
-    private void Start()
+    void Start()
     {
         enemy = GetComponent<Enemy>();
     }
-    private void OnEnable()
+    void OnEnable()
     {
         currentHP = maxHP;
     }
 
-    private void OnParticleCollision(GameObject other)
+    void OnParticleCollision(GameObject other)
     {
         ProcessHit(other);
     }
 
-    private void ProcessHit(GameObject other)
+    void ProcessHit(GameObject other)
     {
         if (other.transform.tag == "Projectiles")
         {
@@ -28,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
             if (currentHP <= 0)
             {
                 enemy.RewardGold();
+                maxHP += difficultyRamp;
                 gameObject.SetActive(false);
             }
         }

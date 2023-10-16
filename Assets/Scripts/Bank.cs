@@ -8,7 +8,6 @@ public class Bank : MonoBehaviour
     [SerializeField] TextMeshProUGUI goldUI;
 
     int currentBalance;
-
     public int CurrentBalance { get => currentBalance;}
 
     private void Awake()
