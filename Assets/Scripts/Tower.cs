@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
 
         if (bank == null) { return false; }
         
-        if (cost < bank.CurrentBalance)
+        if (cost <= bank.CurrentBalance)
         {
             Instantiate(gameObject, position, Quaternion.Euler(0, 0, 0));
             
