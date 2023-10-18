@@ -4851,7 +4851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3144582324300694500}
-  towerRange: 15
+  towerRange: 20
   projectileParticles: {fileID: 7899020040420647124}
 --- !u!114 &507807828742703404
 MonoBehaviour:
