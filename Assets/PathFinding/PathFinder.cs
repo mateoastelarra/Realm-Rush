@@ -22,11 +22,12 @@ public class PathFinder : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         if (gridManager != null) { grid = gridManager.Grid; }
     }
+
     void Start()
     {
         startNode = gridManager.Grid[startCoordinates];
         destinationNode = gridManager.Grid[destinationCoordinates];
-
+        
         BreadthFirstSearch();
         BuildPath();
     }
