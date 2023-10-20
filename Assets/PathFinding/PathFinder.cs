@@ -4,7 +4,10 @@ using UnityEngine;
 public class PathFinder : MonoBehaviour
 {
     [SerializeField] Vector2Int startCoordinates;
+    public Vector2Int StartCoordinates { get => startCoordinates; }
+
     [SerializeField] Vector2Int destinationCoordinates;
+    public Vector2Int DestinationCoordinates { get => destinationCoordinates; }
 
     Node startNode;
     Node destinationNode;
@@ -20,14 +23,16 @@ public class PathFinder : MonoBehaviour
     private void Awake()
     {
         gridManager = FindObjectOfType<GridManager>();
-        if (gridManager != null) { grid = gridManager.Grid; }
+        if (gridManager != null) 
+        { 
+            grid = gridManager.Grid;
+            startNode = grid[StartCoordinates];
+            destinationNode = grid[DestinationCoordinates];
+        }
     }
 
     void Start()
     {
-        startNode = gridManager.Grid[startCoordinates];
-        destinationNode = gridManager.Grid[destinationCoordinates];
-
         GetNewPath();
     }
 
@@ -69,13 +74,13 @@ public class PathFinder : MonoBehaviour
 
         bool isRunning = true;
         frontier.Enqueue(startNode);
-        reached.Add(startCoordinates, startNode);
+        reached.Add(StartCoordinates, startNode);
         while (frontier.Count > 0 && isRunning)
         {
             currentSearchNode = frontier.Dequeue();
             currentSearchNode.isExplored = true;
             ExploreNeighbors();
-            if (currentSearchNode.coordinates == destinationCoordinates)
+            if (currentSearchNode.coordinates == DestinationCoordinates)
             {
                 isRunning = false;
             }
