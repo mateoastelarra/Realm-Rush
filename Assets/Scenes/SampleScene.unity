@@ -5832,8 +5832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4465cf8c8deb37e4dae399ef55f31ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoordinates: {x: 0, y: 0}
-  destinationCoordinates: {x: 3, y: 3}
+  startCoordinates: {x: 3, y: 5}
+  destinationCoordinates: {x: 12, y: 1}
 --- !u!4 &395666960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6258895606379489115, guid: fc5ce112403efdc418785121c3cf59fc, type: 3}
@@ -7047,7 +7047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fea15d74924814daa318a690a2c514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 10, y: 10}
+  gridSize: {x: 20, y: 20}
   unityGridSize: 10
 --- !u!4 &473533111
 Transform:

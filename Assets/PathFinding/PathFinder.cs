@@ -26,8 +26,10 @@ public class PathFinder : MonoBehaviour
         if (gridManager != null) 
         { 
             grid = gridManager.Grid;
-            startNode = grid[StartCoordinates];
-            destinationNode = grid[DestinationCoordinates];
+            startNode = grid[startCoordinates];
+            destinationNode = grid[destinationCoordinates];
+            startNode.isWalkable = true;
+            destinationNode.isWalkable = true;
         }
     }
 
