@@ -18,8 +18,8 @@ public class CoordinateLabeller : MonoBehaviour
     {
         label = GetComponent<TextMeshPro>();
         label.enabled = false;
-        DisplayCurrentCoordinates();
         gridManager = FindObjectOfType<GridManager>();
+        DisplayCurrentCoordinates();    
     }
 
     void Update()
@@ -63,8 +63,12 @@ public class CoordinateLabeller : MonoBehaviour
 
     void DisplayCurrentCoordinates()
     {
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x) ;
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        if (gridManager == null) {
+            Debug.Log("No grid Manager");
+            return;  }
+
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize);
         label.text = coordinates.x + "," + coordinates.y;
     }
 
