@@ -10,7 +10,7 @@ public class Tower : MonoBehaviour
     public bool BuildTower(Vector3 position)
     {
         Bank bank;
-        bank = FindAnyObjectByType<Bank>();
+        bank = FindObjectOfType<Bank>();
 
         if (bank == null) { return false; }
         
