@@ -1,11 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
     [SerializeField] int cost = 20;
+    [SerializeField] float buildTime = 3f;
+    [SerializeField] GameObject[] towerParts;
 
+    private void OnEnable()
+    {
+        StartCoroutine(ActivateTower());
+    }
 
     public bool BuildTower(Vector3 position)
     {
@@ -17,7 +22,7 @@ public class Tower : MonoBehaviour
         if (cost <= bank.CurrentBalance)
         {
             Instantiate(gameObject, position, Quaternion.Euler(0, 0, 0));
-            
+
             bank.Withdraw(cost);
 
             return true;
@@ -29,5 +34,15 @@ public class Tower : MonoBehaviour
             return false;
         }
         
+    }
+
+    IEnumerator ActivateTower()
+    {
+        foreach (GameObject towerPart in towerParts)
+        {
+            towerPart.SetActive(true);
+
+            yield return new WaitForSeconds(buildTime / towerParts.Length);
+        }
     }
 }

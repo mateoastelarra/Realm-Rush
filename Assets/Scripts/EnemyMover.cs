@@ -57,7 +57,7 @@ public class EnemyMover : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    IEnumerator  FollowPath()
+    IEnumerator FollowPath()
     {
         for(int i = 1; i < path.Count; i++)
         {
