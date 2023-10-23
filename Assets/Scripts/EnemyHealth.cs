@@ -18,10 +18,19 @@ public class EnemyHealth : MonoBehaviour
     {
         enemy = GetComponent<Enemy>();
     }
+
     void OnEnable()
     {
         currentHP = maxHP;
         UpdateHealthUI();
+    }
+
+    private void Update()
+    {
+        //HealthUI.transform.rotation = new Quaternion(0, 1, 0, 0);
+        HealthUI.transform.rotation = Quaternion.Euler(180, 0 , 0);
+        Debug.Log(HealthUI.transform.rotation);
+        Debug.Log(transform.rotation);
     }
 
     void OnParticleCollision(GameObject other)
@@ -47,6 +56,5 @@ public class EnemyHealth : MonoBehaviour
     void UpdateHealthUI()
     {
         HealthUI.value = (currentHP * 1.0f) / maxHP ;
-        Debug.Log((currentHP * 1.0f) / maxHP);
     }
 }

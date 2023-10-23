@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] [Range(0, 5)]float speed = 1;
+    
 
     Enemy enemy;
     GridManager gridManager;
