@@ -4851,7 +4851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3144582324300694500}
-  towerRange: 20
+  towerRange: 30
   projectileParticles: {fileID: 7899020040420647124}
 --- !u!114 &507807828742703404
 MonoBehaviour:
@@ -4866,11 +4866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
-  buildTime: 3
-  towerParts:
-  - {fileID: 8293807043288370748}
-  - {fileID: 6131056645070147807}
-  - {fileID: 734510839421868597}
+  buildDelay: 1
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0

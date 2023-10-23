@@ -4,12 +4,11 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] int cost = 20;
-    [SerializeField] float buildTime = 3f;
-    [SerializeField] GameObject[] towerParts;
+    [SerializeField] float buildDelay = 3f;
 
-    private void OnEnable()
+    private void Start()
     {
-        StartCoroutine(ActivateTower());
+        StartCoroutine(BuildWithDelays());
     }
 
     public bool BuildTower(Vector3 position)
@@ -36,13 +35,32 @@ public class Tower : MonoBehaviour
         
     }
 
-    IEnumerator ActivateTower()
+    IEnumerator BuildWithDelays()
     {
-        foreach (GameObject towerPart in towerParts)
-        {
-            towerPart.SetActive(true);
+        DeactivateTowerParts();
 
-            yield return new WaitForSeconds(buildTime / towerParts.Length);
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(buildDelay);
+            
+            foreach (Transform grandchild in child)
+            {
+                grandchild.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    void DeactivateTowerParts()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+            foreach (Transform grandchild in child)
+            {
+                grandchild.gameObject.SetActive(false);
+            }
         }
     }
 }
