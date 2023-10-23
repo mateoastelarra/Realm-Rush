@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHP = 5;
+    [SerializeField] Slider HealthUI;
 
     [Tooltip("Ads amount to maxHP when enemy dies.")]
     [SerializeField] int difficultyRamp = 1;
@@ -19,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     void OnEnable()
     {
         currentHP = maxHP;
+        UpdateHealthUI();
     }
 
     void OnParticleCollision(GameObject other)
@@ -31,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
         if (other.transform.tag == "Projectiles")
         {
             currentHP--;
+            UpdateHealthUI();
             if (currentHP <= 0)
             {
                 enemy.RewardGold();
@@ -38,5 +42,11 @@ public class EnemyHealth : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    void UpdateHealthUI()
+    {
+        HealthUI.value = (currentHP * 1.0f) / maxHP ;
+        Debug.Log((currentHP * 1.0f) / maxHP);
     }
 }
