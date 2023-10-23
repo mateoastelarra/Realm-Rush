@@ -27,10 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        //HealthUI.transform.rotation = new Quaternion(0, 1, 0, 0);
-        HealthUI.transform.rotation = Quaternion.Euler(180, 0 , 0);
-        Debug.Log(HealthUI.transform.rotation);
-        Debug.Log(transform.rotation);
+        HealthUI.transform.rotation = Quaternion.Euler(180, 0 , 0);   
     }
 
     void OnParticleCollision(GameObject other)
