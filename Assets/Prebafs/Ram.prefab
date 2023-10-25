@@ -98,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9218378067594265259
 Transform:
   m_ObjectHideFlags: 0
@@ -106,12 +106,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2781195752855106170}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 1.5}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 5.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6791775195903856297}
-  m_RootOrder: 0
+  m_Father: {fileID: 8497576287389773037}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &908376111770784649
 ParticleSystem:
@@ -9926,7 +9926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6791775195903856297
 Transform:
   m_ObjectHideFlags: 0
@@ -9937,8 +9937,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 9218378067594265259}
+  m_Children: []
   m_Father: {fileID: 8497576287389773037}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -14833,6 +14832,7 @@ Transform:
   - {fileID: 9040419010805553150}
   - {fileID: 9068925683584713846}
   - {fileID: 6791775195903856297}
+  - {fileID: 9218378067594265259}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -14876,6 +14876,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   HealthUI: {fileID: 1365709132730808222}
+  enemyMesh: {fileID: 228399148191534734}
+  flame: {fileID: 7959973460918917345}
+  smoke: {fileID: 2781195752855106170}
+  deathDelay: 0.2
+  healthPercentageForFire: 0.4
   difficultyRamp: 5
 --- !u!114 &6525563098539539649
 MonoBehaviour:
