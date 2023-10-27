@@ -24,6 +24,7 @@ public class EnemyMover : MonoBehaviour
     {
         ReturnToStart();
         RecalculatePath(true);
+        enemy.enabled = true;
     }
 
     void RecalculatePath(bool resetPath)
@@ -55,6 +56,7 @@ public class EnemyMover : MonoBehaviour
     void FinishPath()
     {
         enemy.StealGold();
+        enemy.enabled = false;
         gameObject.SetActive(false);
     }
 

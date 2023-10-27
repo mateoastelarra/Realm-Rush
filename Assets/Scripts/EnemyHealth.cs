@@ -31,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
     void OnEnable()
     {
         currentHP = maxHP;
+        enemy.enabled = true;
         HealthUI.gameObject.SetActive(true);
         enemyMesh.SetActive(true);
         UpdateHealthUI();
@@ -48,13 +49,14 @@ public class EnemyHealth : MonoBehaviour
 
     void ProcessHit(GameObject other)
     {
-        if (other.transform.tag == "Projectiles")
+        if (other.transform.tag == "Projectiles" && enemy.enabled)
         {
             currentHP--;
             UpdateHealthUI();
             if (currentHP <= 0)
             {
                 enemy.RewardGold();
+                enemy.enabled = false;
                 maxHP += difficultyRamp;
                 StartCoroutine(nameof(EnemyDeath));
             }

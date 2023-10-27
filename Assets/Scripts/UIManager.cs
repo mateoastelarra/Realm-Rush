@@ -5,9 +5,14 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI goldUI;
-    [SerializeField] TextMeshProUGUI goldChangesUI;
+    [SerializeField] TextMeshProUGUI[] goldChangesUI;
+    [SerializeField] float goldAnimationSpeed = 2f;
+    [SerializeField] float goldAnimationMovement = 30f;
+
+    int currentGoldChangesUIindex = 0;
 
     IEnumerator coroutine;
+
 
     public void DisplayCurrentBalance(int amount)
     {
@@ -22,32 +27,35 @@ public class UIManager : MonoBehaviour
 
     IEnumerator DisplayGoldChanges(int amount)
     {
+        currentGoldChangesUIindex = (currentGoldChangesUIindex + 1) % goldChangesUI.Length;
+        TextMeshProUGUI currentGoldChangesUI = goldChangesUI[currentGoldChangesUIindex];
+
         if (amount > 0)
         {
-            goldChangesUI.text = "+ " + amount;
-            goldChangesUI.color = Color.green;
+            currentGoldChangesUI.text = "+ " + amount;
+            currentGoldChangesUI.color = Color.green;
         }
         else if (amount < 0)
         {
-            goldChangesUI.text = "- " + (-amount);
-            goldChangesUI.color = Color.red;
+            currentGoldChangesUI.text = "- " + (-amount);
+            currentGoldChangesUI.color = Color.red;
         }
 
-        goldChangesUI.gameObject.SetActive(true);
+        currentGoldChangesUI.gameObject.SetActive(true);
 
-        Vector3 startingPosition = goldChangesUI.transform.position;
-        Vector3 endPosition = startingPosition + new Vector3(0, 40, 0);
+        Vector3 startingPosition = currentGoldChangesUI.transform.position;
+        Vector3 endPosition = startingPosition + new Vector3(0, goldAnimationMovement, 0);
         float timer = 0;
 
         while (timer <= 1)
         {
-            goldChangesUI.transform.position = Vector3.Lerp(startingPosition, endPosition, timer);
-            timer += Time.deltaTime;
+            currentGoldChangesUI.transform.position = Vector3.Lerp(startingPosition, endPosition, timer);
+            timer += Time.deltaTime * goldAnimationSpeed;
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        goldChangesUI.transform.position = startingPosition;
+        currentGoldChangesUI.transform.position = startingPosition;
 
-        goldChangesUI.gameObject.SetActive(false);
+        currentGoldChangesUI.gameObject.SetActive(false);
     }
 }

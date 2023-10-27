@@ -17,9 +17,7 @@ public class Bank : MonoBehaviour
     {
         currentBalance = startingBalance;
         uIManager.DisplayCurrentBalance(startingBalance);
-        //DisplayCurrentBalance();
     }
-
 
     public void Deposit(int amount)
     {

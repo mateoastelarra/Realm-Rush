@@ -36499,7 +36499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796404843834233, guid: 92b2cae9e68badd42b3f59cf1435acde, type: 3}
       propertyPath: objectPoolSize
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4796404843834239, guid: 92b2cae9e68badd42b3f59cf1435acde, type: 3}
       propertyPath: m_Name
@@ -36583,6 +36583,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2638826717607963353, guid: d95f3367e9867ef43a8b228a642e8a5d, type: 3}
+      propertyPath: goldAnimationSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638826717607963353, guid: d95f3367e9867ef43a8b228a642e8a5d, type: 3}
+      propertyPath: goldAnimationMovement
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 5777100044716298040, guid: d95f3367e9867ef43a8b228a642e8a5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
