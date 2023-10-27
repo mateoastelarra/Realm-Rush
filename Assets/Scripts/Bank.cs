@@ -6,6 +6,7 @@ using System.Collections;
 public class Bank : MonoBehaviour
 {
     [SerializeField] int startingBalance = 150;
+    [SerializeField] UIManager uIManager;
     [SerializeField] TextMeshProUGUI goldUI;
     [SerializeField] TextMeshProUGUI goldChangesUI;
 
@@ -15,24 +16,23 @@ public class Bank : MonoBehaviour
     private void Awake()
     {
         currentBalance = startingBalance;
-        DisplayCurrentBalance();
+        uIManager.DisplayCurrentBalance(startingBalance);
+        //DisplayCurrentBalance();
     }
 
 
     public void Deposit(int amount)
     {
         currentBalance += Mathf.Abs(amount);
-        IEnumerator coroutine = DisplayGoldChanges(Mathf.Abs(amount));
-        StartCoroutine(coroutine);
-        DisplayCurrentBalance();
+        uIManager.DisplayGoldChangesUI(Mathf.Abs(amount));
+        uIManager.DisplayCurrentBalance(currentBalance);
     }
 
     public void Withdraw(int amount)
     {
         currentBalance -= Mathf.Abs(amount);
-        IEnumerator coroutine = DisplayGoldChanges(-Mathf.Abs(amount));
-        StartCoroutine(coroutine);
-        DisplayCurrentBalance();
+        uIManager.DisplayGoldChangesUI(-Mathf.Abs(amount));
+        uIManager.DisplayCurrentBalance(currentBalance);
 
         if (currentBalance < 0)
         {
