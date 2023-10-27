@@ -35,7 +35,18 @@ public class UIManager : MonoBehaviour
 
         goldChangesUI.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        Vector3 startingPosition = goldChangesUI.transform.position;
+        Vector3 endPosition = startingPosition + new Vector3(0, 40, 0);
+        float timer = 0;
+
+        while (timer <= 1)
+        {
+            goldChangesUI.transform.position = Vector3.Lerp(startingPosition, endPosition, timer);
+            timer += Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        goldChangesUI.transform.position = startingPosition;
 
         goldChangesUI.gameObject.SetActive(false);
     }

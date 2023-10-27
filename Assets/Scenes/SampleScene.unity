@@ -7872,6 +7872,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7ab251192cf3c4daa485590b0da789, type: 3}
+--- !u!114 &491351804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2638826717607963353, guid: d95f3367e9867ef43a8b228a642e8a5d, type: 3}
+  m_PrefabInstance: {fileID: 5777100043846277172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8dc75ca94863a46a171a2c7868ce55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &501490573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6258895606379489115, guid: fc5ce112403efdc418785121c3cf59fc, type: 3}
@@ -36555,6 +36566,10 @@ PrefabInstance:
       propertyPath: goldUI
       value: 
       objectReference: {fileID: 1791372052}
+    - target: {fileID: 5487672731049413976, guid: 4eb92eab6ebdb01428a773527f8e9e4a, type: 3}
+      propertyPath: uIManager
+      value: 
+      objectReference: {fileID: 491351804}
     - target: {fileID: 5487672731049413976, guid: 4eb92eab6ebdb01428a773527f8e9e4a, type: 3}
       propertyPath: goldChangesUI
       value: 
