@@ -36499,7 +36499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796404843834233, guid: 92b2cae9e68badd42b3f59cf1435acde, type: 3}
       propertyPath: objectPoolSize
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4796404843834239, guid: 92b2cae9e68badd42b3f59cf1435acde, type: 3}
       propertyPath: m_Name
