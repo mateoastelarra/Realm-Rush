@@ -3,7 +3,4 @@
 
 # Matching files extension
 *.cs linguist-language=C#
-*.shader linguist-language=ShaderLab
-*/*/Realm-Rush/*.vb linguist-generated
-Assets/TextMesh?Pro/* linguist-vendored
-*.ShaderLab linguist-detectable=false
+
