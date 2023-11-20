@@ -2,6 +2,7 @@
 * text=auto
 
 # Matching files extension
+*.cs linguist-language=C#
 */*/Realm-Rush/*.vb linguist-generated
 Assets/TextMesh?Pro/* linguist-vendored
 *.ShaderLab linguist-detectable=false
