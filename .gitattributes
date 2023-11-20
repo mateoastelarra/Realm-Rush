@@ -1,9 +1,7 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-
-# Matching files extension
+# Set C# as language for .cs files
 *.cs linguist-language=C#
-*.shader linguist-language=ShaderLab
-*/*/Realm-Rush/*.vb linguist-generated
-Assets/TextMesh?Pro/* linguist-vendored
-*.ShaderLab linguist-detectable=false
+
+# Exclude all files with .shader extension from ShaderLab detection
+*.shader linguist-detectable=false
+
+
