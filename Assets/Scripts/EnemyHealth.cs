@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     int currentHP = 0;
     Enemy enemy;
 
-    void Start()
+    void Awake()
     {
         enemy = GetComponent<Enemy>();
     }

@@ -13,8 +13,8 @@ public class Tile : MonoBehaviour
 
     private void Awake()
     {
-        gridManager = FindObjectOfType<GridManager>();
-        pathFinder = FindObjectOfType<PathFinder>();
+        GameObject.FindWithTag("GridManager").GetComponent<GridManager>();
+        pathFinder = GameObject.FindWithTag("ObjectPool").GetComponent<PathFinder>();
         BlockNotPlaceableNodes();
     }
 

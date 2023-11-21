@@ -18,7 +18,7 @@ public class CoordinateLabeller : MonoBehaviour
     {
         label = GetComponent<TextMeshPro>();
         label.enabled = false;
-        gridManager = FindObjectOfType<GridManager>();
+        gridManager = GameObject.FindWithTag("GridManager").GetComponent<GridManager>();
         DisplayCurrentCoordinates();    
     }
 

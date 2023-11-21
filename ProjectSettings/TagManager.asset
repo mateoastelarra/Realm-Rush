@@ -8,6 +8,7 @@ TagManager:
   - Path
   - GridManager
   - ObjectPool
+  - Enemy
   layers:
   - Default
   - TransparentFX

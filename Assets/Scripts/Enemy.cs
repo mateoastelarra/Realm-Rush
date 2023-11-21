@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
-        bank = FindObjectOfType<Bank>();
+        bank = GameObject.FindWithTag("Bank").GetComponent<Bank>();
     }
 
     public void RewardGold()

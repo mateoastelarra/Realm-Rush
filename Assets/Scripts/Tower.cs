@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
     public bool BuildTower(Vector3 position)
     {
         Bank bank;
-        bank = FindObjectOfType<Bank>();
+        bank = GameObject.FindWithTag("Bank").GetComponent<Bank>();
 
         if (bank == null) { return false; }
         
