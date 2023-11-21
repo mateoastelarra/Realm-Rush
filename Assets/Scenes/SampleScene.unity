@@ -36523,6 +36523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank
       objectReference: {fileID: 0}
+    - target: {fileID: 5487672731049413958, guid: 4eb92eab6ebdb01428a773527f8e9e4a, type: 3}
+      propertyPath: m_TagString
+      value: Bank
+      objectReference: {fileID: 0}
     - target: {fileID: 5487672731049413959, guid: 4eb92eab6ebdb01428a773527f8e9e4a, type: 3}
       propertyPath: m_RootOrder
       value: 4

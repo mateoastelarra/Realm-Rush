@@ -9,6 +9,7 @@ TagManager:
   - GridManager
   - ObjectPool
   - Enemy
+  - Bank
   layers:
   - Default
   - TransparentFX
