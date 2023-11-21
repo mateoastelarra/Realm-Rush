@@ -9,6 +9,8 @@ public class PathFinder : MonoBehaviour
     [SerializeField] Vector2Int destinationCoordinates;
     public Vector2Int DestinationCoordinates { get => destinationCoordinates; }
 
+    [SerializeField] GridManager gridManager;
+
     Node startNode;
     Node destinationNode;
     Node currentSearchNode;
@@ -17,12 +19,11 @@ public class PathFinder : MonoBehaviour
     Dictionary<Vector2Int, Node> reached = new Dictionary<Vector2Int, Node>();
 
     Vector2Int[] directions = { Vector2Int.right, Vector2Int.left, Vector2Int.up, Vector2Int.down };
-    GridManager gridManager;
+    
     Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int, Node>();
 
     private void Awake()
     {
-        gridManager = FindObjectOfType<GridManager>();
         if (gridManager != null) 
         { 
             grid = gridManager.Grid;

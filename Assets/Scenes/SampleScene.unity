@@ -6351,6 +6351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCoordinates: {x: 3, y: 6}
   destinationCoordinates: {x: 12, y: 2}
+  gridManager: {fileID: 473533110}
 --- !u!4 &395666960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6258895606379489115, guid: fc5ce112403efdc418785121c3cf59fc, type: 3}
@@ -7549,7 +7550,7 @@ GameObject:
   - component: {fileID: 473533110}
   m_Layer: 0
   m_Name: GridManager
-  m_TagString: Untagged
+  m_TagString: GridManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36503,6 +36504,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796404843834239, guid: 92b2cae9e68badd42b3f59cf1435acde, type: 3}
       propertyPath: m_Name
+      value: ObjectPool
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796404843834239, guid: 92b2cae9e68badd42b3f59cf1435acde, type: 3}
+      propertyPath: m_TagString
       value: ObjectPool
       objectReference: {fileID: 0}
     m_RemovedComponents: []

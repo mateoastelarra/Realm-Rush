@@ -15,8 +15,8 @@ public class EnemyMover : MonoBehaviour
 
     private void Awake()
     {
-        gridManager = FindObjectOfType<GridManager>();
-        pathFinder = FindObjectOfType<PathFinder>();
+        gridManager = GameObject.FindWithTag("GridManager").GetComponent<GridManager>();
+        pathFinder = GameObject.FindWithTag("ObjectPool").GetComponent<PathFinder>();
         enemy = GetComponent<Enemy>();
     }
 
